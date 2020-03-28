@@ -2,20 +2,34 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>ToDo</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="{% static '/css/style.css' %}">
-    </head>
-    <body>
-        <header>
-            <h1><a>ToDo</a></h1>
-            <a>Login</a>
-            <a>Signup</a>
-        </header>
+<head>
+    <title>ToDo</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
 
+<body>
+    <header>
+        <nav>
+            <h1><a>ToDo</a></h1>
+            <div>
+                <a>Login</a>
+                <a href="{% url 'signup'%}">Signup</a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class='delete-in-future'>
         <h2>What ToDo Can Do?</h2>
         <p>I dont know!!!!</p>
-    </body>
+    </div>
+
+    <footer>
+        <p>Copyright 2020. Create Vlad Artyukh</p>
+        <p>Contanct me</p>
+
+    </footer>
+</body>
 
 </html>

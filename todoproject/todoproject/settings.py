@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'signup.apps.SignupConfig'
 ]
 
 MIDDLEWARE = [
@@ -125,6 +126,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-#MEDIA_DIR = os.path.join(BASE_DIR,'media')
-#STATIC_DIR = os.path.join(BASE_DIR, 'static/')
-#

@@ -1,8 +1,32 @@
-body {
+* {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 }
 
 header {
-    background-color: black;
+    background-color: #222727;
+    color: #ffffff;
+    padding: 16px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-in-future{
+    text-align: center;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background-color: #222727;
+    color: #ffffff;
+    text-align: center;
 }
