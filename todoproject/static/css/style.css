@@ -1,3 +1,5 @@
+@import "root.css";
+
 * {
     margin: 0;
     padding: 0;
@@ -6,14 +8,33 @@
 }
 
 header {
-    background-color: #222727;
-    color: #ffffff;
+    background-color: var(--black);
+    color: var(--white);
     padding: 16px;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
+}
+
+.logo {
+    color: var(--white);
+}
+
+.navigation{
+    display: flex;
+}
+
+.login{
+    margin: auto;
+}
+
+.signup {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 6px 8px;
+    margin-left: 10px;
 }
 
 .delete-in-future{
@@ -26,7 +47,7 @@ footer{
     left: 0;
     right: 0;
     padding: 16px;
-    background-color: #222727;
-    color: #ffffff;
+    background-color: var(--black);
+    color: var(--white);
     text-align: center;
 }

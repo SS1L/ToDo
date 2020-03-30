@@ -17,11 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 
-from home.views import homeview
-from signup import views as signup_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls')),
-    path('signup/', include('signup.urls')),
+    path('', include('accounts.urls'))
 ]

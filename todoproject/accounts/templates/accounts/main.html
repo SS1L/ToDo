@@ -12,23 +12,21 @@
 <body>
     <header>
         <nav>
-            <h1><a>ToDo</a></h1>
-            <div>
-                <a>Login</a>
-                <a href="{% url 'signup'%}">Signup</a>
+            <h1><a href="{% url 'home'%}" class="logo">ToDo</a></h1>
+            <div class="navigation">
+                <a href="{% url 'login' %}" class='login'>Login</a>
+                <a href="{% url 'signup' %}"class='signup'>Signup</a>
             </div>
         </nav>
     </header>
     
-    <div class='delete-in-future'>
-        <h2>What ToDo Can Do?</h2>
-        <p>I dont know!!!!</p>
-    </div>
+    {% block content %}
+
+    {% endblock %}
 
     <footer>
         <p>Copyright 2020. Create Vlad Artyukh</p>
         <p>Contanct me</p>
-
     </footer>
 </body>
 
