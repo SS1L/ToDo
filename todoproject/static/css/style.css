@@ -20,6 +20,7 @@ nav {
 
 .logo {
     color: var(--white);
+    text-decoration: none;
 }
 
 .navigation{
@@ -28,6 +29,8 @@ nav {
 
 .login{
     margin: auto;
+    color: var(--white);
+    text-decoration: none;
 }
 
 .signup {
@@ -35,6 +38,7 @@ nav {
     color: var(--black);
     padding: 6px 8px;
     margin-left: 10px;
+    text-decoration: none;
 }
 
 .delete-in-future{

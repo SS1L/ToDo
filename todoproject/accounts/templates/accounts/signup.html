@@ -1,11 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
 
-<h1>Hello it`s work!!!</h1>
+<head>
+    <title>ToDo</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static '/css/registration.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
 
-<form method="POST">
-    <h1>Sign up for your account</h1>
-    <input placeholder="Enter email">
-    <input type="text" placeholder="Enter a full name">
-    <input type="password" placeholder="Create a password">
-    <input type="password" placeholder="Confirm a password">
-    <input type='submit'>
-</form>
+<body>
+    <h1>ToDo</h1>
+    <div>
+        <form method="POST" action="" class="registration">
+            {% csrf_token %}
+            <div class="inside-form">
+                <h2 class="form-title">Sign up for your account</h2>
+
+                <div class="input-group">
+                    <div class="name">
+                        {{form.username.label}}
+                    </div>
+                    {{form.username}}
+                </div>
+
+                <div class="input-group">
+                    <div class="name">
+                        {{form.email.label}}
+                    </div>
+                    {{form.email}}
+                </div>
+
+                <div class="input-group">
+                    <div class="name">
+                        {{form.password1.label}}
+                    </div>
+                    {{form.password1}}
+                </div>
+
+                <div class="input-group">
+                    <div class="name">
+                        Confirm
+                    </div>
+                    {{form.password2}}
+                </div>
+
+                <div class="submit">
+                    <input type="submit" name="Create User" class="submit-btn">
+                </div>
+
+                <hr>
+
+                <div class="">
+                    <a href="{% url 'login' %}">Already have an account? Log In</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
