@@ -48,7 +48,7 @@ input{
 
 .submit-btn {
     width: 30%;
-    background-color: #1b1d1c;
+    background-color: #222423;
     color: #ffffff;
     border: 0px;
     border-radius: 8px;
@@ -58,4 +58,17 @@ input{
 
 hr {
     margin: 25px 0;
+}
+
+.page-link{
+    text-align: right;
+}
+
+a {
+    color: #0052CC;
+    text-decoration: none;
+}
+
+a:visited{
+    color: #0052CC;
 }

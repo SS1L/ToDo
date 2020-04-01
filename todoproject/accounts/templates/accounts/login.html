@@ -1,8 +1,45 @@
-<h1>ToDo</h1>
-<form>
-    <h1>Log in to Trello</h1>
-    <input placeholder="Enter email">
-    <input placeholder="Enter password">
+{% load static %}
+<!DOCTYPE html>
+<html>
 
-    <a href="{% url 'signup'%}">Sign up for an account</a>
-</form>
+<head>
+    <title>ToDo</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static '/css/registration.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>ToDo</h1>
+    <div>
+        <form method="POST" class="registration">
+            <div class="inside-form">
+                <h2 class="form-title">Log in to ToDo</h1>
+                {% csrf_token %}
+                <div class="input-group">
+                    <div class="name">
+                        Email
+                    </div>
+                    <input type="text">
+                </div>
+                <div class="input-group">
+                    <div class="name">
+                        Password
+                    </div>
+                    <input type="password">
+                </div>
+                <div class="submit">
+                    <input type="submit" name="" value="Login" class="submit-btn">
+                </div>
+
+                <hr>
+
+                <div class="page-link">
+                    <a href="{% url 'signup'%}">Sign up for an account</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
