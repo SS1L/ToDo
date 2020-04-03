@@ -16,7 +16,6 @@
             {% csrf_token %}
             <div class="inside-form">
                 <h2 class="form-title">Sign up for your account</h2>
-
                 <div class="input-group">
                     <div class="name">
                         {{form.username.label}}
@@ -44,6 +43,8 @@
                     </div>
                     {{form.password2}}
                 </div>
+
+                {{ form.errors }}
 
                 <div class="submit">
                     <input type="submit" name="Create User" class="submit-btn">
