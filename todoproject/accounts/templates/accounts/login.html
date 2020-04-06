@@ -1,45 +1,37 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>ToDo</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static '/css/registration.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-</head>
-
-<body>
-    <h1>ToDo</h1>
-    <div>
-        <form method="POST" class="registration">
-            <div class="inside-form">
-                <h2 class="form-title">Log in to ToDo</h1>
+{% extends 'accounts/main.html' %}
+{% block content %}
+<h1>ToDo</h1>
+<div>
+    <form method="POST" class="registration" action="">
+        <div class="inside-form">
+            <h2 class="form-title">Log in to ToDo</h1>
                 {% csrf_token %}
+
                 <div class="input-group">
                     <div class="name">
                         Email
                     </div>
-                    <input type="text">
+                    <input type="email" name="email">
                 </div>
                 <div class="input-group">
                     <div class="name">
                         Password
                     </div>
-                    <input type="password">
+                    <input type="password" name="password">
                 </div>
                 <div class="submit">
-                    <input type="submit" name="" value="Login" class="submit-btn">
+                    <input type="submit" class="submit-btn" name="login">
                 </div>
-
                 <hr>
 
                 <div class="page-link">
                     <a href="{% url 'signup'%}">Sign up for an account</a>
                 </div>
-            </div>
-        </form>
-    </div>
-</body>
+        </div>
+    </form>
+    {% for message in messages %}
+    <p id="messages">{{message}}</p>
+    {% endfor %}
+</div>
 
-</html>
+{% endblock content %}

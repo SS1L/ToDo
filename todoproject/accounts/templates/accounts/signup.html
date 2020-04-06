@@ -1,63 +1,53 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
+{% extends 'accounts/main.html' %}
+{% block content %}
 
-<head>
-    <title>ToDo</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static '/css/registration.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-</head>
-
-<body>
-    <h1>ToDo</h1>
-    <div>
-        <form method="POST" action="" class="registration">
-            {% csrf_token %}
-            <div class="inside-form">
-                <h2 class="form-title">Sign up for your account</h2>
-                <div class="input-group">
-                    <div class="name">
-                        {{form.username.label}}
-                    </div>
-                    {{form.username}}
+<h1>ToDo</h1>
+<div>
+    <form method="POST" class="registration">
+        {% csrf_token %}
+        <div class="inside-form">
+            <h2 class="form-title">Sign up for your account</h2>
+            <div class="input-group">
+                <div class="name">
+                    {{form.username.label}}
                 </div>
-
-                <div class="input-group">
-                    <div class="name">
-                        {{form.email.label}}
-                    </div>
-                    {{form.email}}
-                </div>
-
-                <div class="input-group">
-                    <div class="name">
-                        {{form.password1.label}}
-                    </div>
-                    {{form.password1}}
-                </div>
-
-                <div class="input-group">
-                    <div class="name">
-                        Confirm
-                    </div>
-                    {{form.password2}}
-                </div>
-
-                {{ form.errors }}
-
-                <div class="submit">
-                    <input type="submit" name="Create User" class="submit-btn">
-                </div>
-
-                <hr>
-
-                <div class="page-link">
-                    <a href="{% url 'login' %}">Already have an account? Log In</a>
-                </div>
+                {{form.username}}
             </div>
-        </form>
-    </div>
-</body>
 
-</html>
+            <div class="input-group">
+                <div class="name">
+                    {{form.email.label}}
+                </div>
+                {{form.email}}
+            </div>
+
+            <div class="input-group">
+                <div class="name">
+                    {{form.password1.label}}
+                </div>
+                {{form.password1}}
+            </div>
+
+            <div class="input-group">
+                <div class="name">
+                    Confirm
+                </div>
+                {{form.password2}}
+            </div>
+
+            {{form.errors}}
+
+            <div class="submit">
+                <input type="submit" name="Create User" class="submit-btn">
+            </div>
+
+            <hr>
+
+            <div class="page-link">
+                <a href="{% url 'login' %}">Already have an account? Log In</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

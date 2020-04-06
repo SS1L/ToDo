@@ -6,19 +6,12 @@
     <title>ToDo</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/registration.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <h1><a href="{% url 'home'%}" class="logo">ToDo</a></h1>
-            <div class="navigation">
-                <a href="{% url 'login' %}" class='login'>Login</a>
-                <a href="{% url 'signup' %}"class='signup'>Signup</a>
-            </div>
-        </nav>
-    </header>
+    {% include 'accounts/header.html' %}
     
     {% block content %}
 
