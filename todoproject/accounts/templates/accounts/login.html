@@ -1,33 +1,14 @@
-{% extends 'accounts/main.html' %}
+{% extends 'main.html' %}
+
+{% block title %}Login{% endblock%}
+
 {% block content %}
 <h1>ToDo</h1>
 <div>
     <form method="POST" class="registration" action="">
-        <div class="inside-form">
-            <h2 class="form-title">Log in to ToDo</h1>
-                {% csrf_token %}
-
-                <div class="input-group">
-                    <div class="name">
-                        Email
-                    </div>
-                    <input type="email" name="email">
-                </div>
-                <div class="input-group">
-                    <div class="name">
-                        Password
-                    </div>
-                    <input type="password" name="password">
-                </div>
-                <div class="submit">
-                    <input type="submit" class="submit-btn" name="login">
-                </div>
-                <hr>
-
-                <div class="page-link">
-                    <a href="{% url 'signup'%}">Sign up for an account</a>
-                </div>
-        </div>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Log in">
     </form>
     {% for message in messages %}
     <p id="messages">{{message}}</p>
