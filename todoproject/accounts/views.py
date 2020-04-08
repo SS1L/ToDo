@@ -7,6 +7,8 @@ from django.contrib.auth import authenticate, login, logout
 
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .forms import CreateUserForm
+from .forms import TaskForm
+from .models import *
 
 def signupPage(request):
     form = CreateUserForm()
@@ -49,6 +51,28 @@ def home(request):
     return render(request, 'accounts/home.html')
 
 
-
 def boardsPage(request):
-    return render(request, 'tasks/todo.html')
+    tasks = Task.objects.all()
+
+    form = TaskForm()
+
+    if request.method == 'POST':
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+
+    context = {'tasks': tasks, 'form': form}
+    return render(request, 'tasks/todo.html', context)
+
+def updateTask(request, index):
+    task = Task.objects.get(id=index)
+    form = TaskForm(instance=task)
+    if request.method == 'POST':
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+        return redirect('board')
+    
+    context = {'form': form}
+    return render(request, 'tasks/update_todo.html', context)

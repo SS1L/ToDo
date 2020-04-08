@@ -1,14 +1,30 @@
 {% extends 'main.html' %}
 
+{% block titile%}{% endblock %}
 
 {% block content %}
 
 
 {% if  user.is_authenticated %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{form.title}}
+    <input type="submit" name='Create Task'>
+</form>
+{% for task in tasks %}
+
+
+<div>
+    <a href="{% url 'update_task' task.id %}">Update</a>
+    <p>{{task}}</p>
+</div>
+
+{% endfor %}
 <h1>Hello</h1>
-<p><a href="">logout</a></p>
+<p><a href="{% url 'logout' %}">logout</a></p>
+
 {% else %}
-<h1>logout</h1>
 <p>You are not logged in</p>
 <a href="{% url 'login' %}">login</a>
 {% endif %}
