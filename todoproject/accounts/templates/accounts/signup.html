@@ -8,6 +8,9 @@
         {% csrf_token %}
         <div class="inside-form">
             <h2 class="form-title">Sign up for your account</h2>
+            <div class="error">
+                {{form.errors.username}}
+            </div>
             <div class="input-group">
                 <div class="name">
                     {{form.username.label}}
@@ -15,6 +18,9 @@
                 {{form.username}}
             </div>
 
+            <div>
+                    {{form.errors.email}}
+            </div>
             <div class="input-group">
                 <div class="name">
                     {{form.email.label}}
@@ -22,12 +28,17 @@
                 {{form.email}}
             </div>
 
+            <div>
+                    {{form.errors.password1}}
+            </div>
             <div class="input-group">
                 <div class="name">
                     {{form.password1.label}}
                 </div>
                 {{form.password1}}
             </div>
+
+            {{form.errors.password2}}
 
             <div class="input-group">
                 <div class="name">
@@ -36,7 +47,6 @@
                 {{form.password2}}
             </div>
 
-            {{form.errors}}
 
             <div class="submit">
                 <input type="submit" name="Create User" class="submit-btn">

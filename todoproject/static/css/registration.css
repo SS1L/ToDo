@@ -58,6 +58,7 @@ input{
 
 .errorlist {
     color: red;
+    list-style-type: none;
 }
 
 hr {

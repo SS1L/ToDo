@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.contrib import messages
 
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+
 
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .forms import CreateUserForm
@@ -38,6 +40,8 @@ def loginPage(request):
                 return redirect('board')
             else:
                 messages.error(request, 'Invalid login or password')
+        else:
+            form = AuthenticationForm()
     else:
         form = AuthenticationForm()
     return render(request, 'accounts/login.html', {'form': form})
@@ -50,7 +54,7 @@ def home(request):
     #return HttpResponse('<h1>Home</h1>')
     return render(request, 'accounts/home.html')
 
-
+@login_required(login_url='home')
 def boardsPage(request):
     tasks = Task.objects.all()
 
@@ -73,6 +77,15 @@ def updateTask(request, index):
         if form.is_valid():
             form.save()
         return redirect('board')
-    
+
     context = {'form': form}
     return render(request, 'tasks/update_todo.html', context)
+
+def deleteTask(request, index):
+    task = Task.objects.get(id=index)
+    if request.method == 'POST':
+        task.delete()
+        return redirect('board')
+
+    context = {'task': task}
+    return render(request, 'tasks/delete_todo.html', context)
