@@ -55,3 +55,41 @@ footer{
     color: var(--white);
     text-align: center;
 }
+
+.todo {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.todo-submit{
+    display: flex;
+}
+
+.todo-form{
+    width: 100%;
+}
+.todo-create{
+    width: 24%;
+    background-color: #02aa02;
+    padding: 5px;
+    border-radius: 8px;
+    border: 0;
+}
+
+.all-item {
+    margin-top: 20px;
+}
+
+.create-item{
+    display: flex;
+    border: 1px solid gray;
+    padding: 10px 0;
+}
+
+.delete-item{
+    background-color: #ff2d2d;
+    color: var(--white);
+    border: 0;
+    padding: 5px 10px;
+    border-radius: 4px;
+}

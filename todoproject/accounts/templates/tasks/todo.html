@@ -3,29 +3,32 @@
 {% block titile%}{% endblock %}
 
 {% block content %}
-
-
-{% if  user.is_authenticated %}
-
-<form method="POST">
-    {% csrf_token %}
-    {{form.title}}
-    <input type="submit" name='Create Task'>
-</form>
-{% for task in tasks %}
-
-
-<div>
-    <a href="{% url 'update_task' task.id %}">Update</a>
-    <a href="{% url 'delete_task' task.id %}">Delete</a>
-    <p>{{task}}</p>
+<div class="todo">
+    <div class="todo-submit">
+        <form method="POST" action="" class="todo-form">
+            {% csrf_token %}
+            <input type="text" name="title" requiredid="id_title">
+            <button type="submit" class="todo-create">
+                    Create
+            </button>
+        </form>
+    </div>
+    <ul class='all-item'>
+        {% for task in tasks %}
+        <div>
+            <li class='create-item'>
+                <div>
+                    {{task}}
+                </div>
+                <form method='POST' action="/deleteTask/{{task.id}}/">
+                    {% csrf_token %}
+                    <input type="submit" value="Delete" class="delete-item">
+                </form>
+            </li>
+        </div>
+        {% endfor %}
+    </ul>
 </div>
 
-{% endfor %}
-
-{% else %}
-<p>You are not logged in</p>
-<a href="{% url 'login' %}">login</a>
-{% endif %}
 
 {% endblock %}

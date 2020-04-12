@@ -51,7 +51,6 @@ def logoutUser(request):
     return redirect('login')
 
 def home(request):
-    #return HttpResponse('<h1>Home</h1>')
     return render(request, 'accounts/home.html')
 
 @login_required(login_url='home')
@@ -88,4 +87,4 @@ def deleteTask(request, index):
         return redirect('board')
 
     context = {'task': task}
-    return render(request, 'tasks/delete_todo.html', context)
+    return render(request, 'tasks/todo.html', context)
