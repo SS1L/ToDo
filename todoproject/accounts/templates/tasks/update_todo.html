@@ -1,8 +1,16 @@
-<h3>Update Todo</h3>
+{% extends 'main.html' %}
 
-<form method="POST">
-    {% csrf_token %}
-    {{form}}
-    <input type="submit" name="Update">
-</form>
+{% block titile%}{% endblock %}
 
+{% block content%}
+
+<div class="todo">
+    <h1>Update Todo</h1>
+    <form method="POST" class="update-form">
+        {% csrf_token %}
+        {{form.title}}
+        <input type="submit" name="Update" class="update-btn">
+    </form>
+</div>
+
+{% endblock %}

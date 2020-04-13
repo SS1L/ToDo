@@ -4,12 +4,13 @@
 
 {% block content %}
 <div class="todo">
+    <h1>Add Item</h1>
     <div class="todo-submit">
         <form method="POST" action="" class="todo-form">
             {% csrf_token %}
-            <input type="text" name="title" requiredid="id_title">
+            <input type="text" name="title" requiredid="id_title" placeholder="print here..." class="input-item">
             <button type="submit" class="todo-create">
-                    Create
+                Create
             </button>
         </form>
     </div>
@@ -17,13 +18,16 @@
         {% for task in tasks %}
         <div>
             <li class='create-item'>
-                <div>
+                <div class="task-item">
                     {{task}}
                 </div>
-                <form method='POST' action="/deleteTask/{{task.id}}/">
-                    {% csrf_token %}
-                    <input type="submit" value="Delete" class="delete-item">
-                </form>
+                <div class="menu-right">
+                    <a href="{% url 'update_task' task.id %}" class='update'>Update</a>
+                    <form method='POST' action="/deleteTask/{{task.id}}/" class="delete-form">
+                        {% csrf_token %}
+                        <input type="submit" value="Delete" class="delete-item">
+                    </form>
+                </div>
             </li>
         </div>
         {% endfor %}

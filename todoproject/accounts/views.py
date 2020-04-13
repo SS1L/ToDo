@@ -76,9 +76,7 @@ def updateTask(request, index):
         if form.is_valid():
             form.save()
         return redirect('board')
-
-    context = {'form': form}
-    return render(request, 'tasks/update_todo.html', context)
+    return render(request, 'tasks/update_todo.html', {'form': form})
 
 def deleteTask(request, index):
     task = Task.objects.get(id=index)
