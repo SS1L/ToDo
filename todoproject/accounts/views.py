@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 from django.contrib import messages
+from django.urls import reverse
 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -57,17 +58,19 @@ def home(request):
 def boardsPage(request):
     tasks = Task.objects.all()
 
-    form = TaskForm()
-
     if request.method == 'POST':
         form = TaskForm(request.POST)
         if form.is_valid():
             form.save()
-
+            return HttpResponseRedirect(reverse('board'))
+    else:
+        form = TaskForm()
+        
 
     context = {'tasks': tasks, 'form': form}
     return render(request, 'tasks/todo.html', context)
 
+@login_required(login_url='home')
 def updateTask(request, index):
     task = Task.objects.get(id=index)
     form = TaskForm(instance=task)
@@ -78,6 +81,7 @@ def updateTask(request, index):
         return redirect('board')
     return render(request, 'tasks/update_todo.html', {'form': form})
 
+@login_required(login_url='home')
 def deleteTask(request, index):
     task = Task.objects.get(id=index)
     if request.method == 'POST':
