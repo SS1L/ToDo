@@ -16,20 +16,22 @@
     </div>
     <ul class='all-item'>
         {% for task in tasks %}
-        <div>
-            <li class='create-item'>
-                <div class="task-item">
-                    {{task}}
-                </div>
-                <div class="menu-right">
+        <li class='create-item'>
+            <div class="task-item">
+                {{task}}
+            </div>
+            <div class="menu-right">
+                <div class="item">
                     <a href="{% url 'update_task' task.id %}" class='update'>Update</a>
+                </div>
+                <div class="item">
                     <form method='POST' action="/deleteTask/{{task.id}}/" class="delete-form">
                         {% csrf_token %}
                         <input type="submit" value="Delete" class="delete-item">
                     </form>
                 </div>
-            </li>
-        </div>
+            </div>
+        </li>
         {% endfor %}
     </ul>
 </div>

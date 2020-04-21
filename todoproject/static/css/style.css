@@ -84,6 +84,7 @@ footer{
     border-radius: 8px;
     border: 0;
     color: var(--white);
+    outline: none;
     font-size: 20px;
     margin-top: 20px;
 }
@@ -93,21 +94,30 @@ footer{
 }
 
 .create-item{
-    display: flex;
+    position: relative;
+    list-style: none;
+    padding: 12px 0;
     border: 1px solid #a19b9b;
-    padding: 10px 0;
 }
 
+
 .task-item {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
+    display: inline-block;
+    margin: 0 20px;
 }
 
 .menu-right {
     display: flex;
-    width: 100%;
-    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    height: inherit;
 }
 
 .update {
