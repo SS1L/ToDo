@@ -19,7 +19,7 @@ nav {
 }
 
 .logo {
-    color: var(--white);
+    color: var(--white) !important;
     text-decoration: none;
 }
 
@@ -74,6 +74,10 @@ footer{
     display: flex;
 }
 
+.submit{
+    margin-top: 30px;
+}
+
 .todo-form{
     width: 100%;
 }
@@ -103,7 +107,9 @@ footer{
 
 .task-item {
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 0 0 20px;
+    width: 50%;
+    word-wrap: break-word;
 }
 
 .menu-right {
@@ -149,11 +155,70 @@ footer{
 
 .update-btn {
     margin-left: 20px;
-    width: 20%;
     background-color: #03ac03;
     color: var(--white);
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 20px;
     border: 0;
+}
+
+@media screen and (max-width: 600px){
+    .title{
+        text-align: center;
+    }
+    
+    .todo {
+        width: 100%;
+        
+    }
+
+    .todo-create{
+        width: 80%;
+        margin: 20px auto 0 auto;
+    }
+
+    .input-item{
+        width: 95%;
+    }
+
+    .create-item{
+        text-align: center;
+    }
+
+    .todo-form {
+        text-align: center;
+    }
+
+    .task-item{
+        width: 80%;
+        margin: 0 20px 20px 20px;
+    }
+
+    .menu-right{
+        position: relative;
+        justify-content: center;
+    }
+
+    .update-form {
+        flex-flow: wrap;
+    }
+    
+    .update-form .submit {
+        width: 100%;
+        text-align: center;
+    }
+
+    .update-btn {
+        width: 50%;
+        margin: 30px 0 0 0;
+    }
+
+    .inside-form .submit {
+        text-align: center;
+    }
+
+    .submit .submit-btn{
+        width: 50%;
+    }
 }
