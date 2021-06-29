@@ -1,0 +1,79 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+.registration {
+    display: flex;
+    max-width: 600px;
+    flex-flow: column;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+.inside-form {
+    padding: 30px;
+}
+
+.form-title {
+    text-align: center;
+    color: #1d1c1c;
+}
+
+.input-group {
+    display: flex;
+    margin: 20px 0;
+}
+
+.name{
+    color: #1d1c1c;
+    width: 180px;
+    font-size: 20px;
+}
+
+input{
+    font-size: 20px;
+    padding: 2px 5px;
+    width: 100%;
+    outline: none;
+}
+
+.submit {
+    text-align: right;
+}
+
+.submit-btn {
+    width: 30%;
+    background-color: #222423;
+    color: #ffffff;
+    border: 0px;
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.errorlist {
+    color: red;
+    list-style-type: none;
+}
+
+hr {
+    margin: 25px 0;
+}
+
+.page-link{
+    text-align: right;
+}
+
+a {
+    color: #0052CC;
+    text-decoration: none;
+}
+
+a:visited{
+    color: #0052CC;
+}

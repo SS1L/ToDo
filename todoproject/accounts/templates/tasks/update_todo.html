@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block title %}Update ToDo{% endblock%}
+
+{% block content%}
+
+<div class="todo">
+    <h1 class="title">Update Todo</h1>
+    <form method="POST" class="update-form">
+        {% csrf_token %}
+        {{form.title}}
+        <div class="submit">
+            <input type="submit" name="Update" class="update-btn">
+        </div>
+    </form>
+</div>
+
+{% endblock %}

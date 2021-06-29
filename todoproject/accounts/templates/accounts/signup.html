@@ -1,0 +1,64 @@
+{% extends 'main.html' %}
+{% block title %}Create a ToDo Account{% endblock%}
+{% block content %}
+
+<h1>ToDo</h1>
+<div>
+    <form method="POST" class="registration">
+        {% csrf_token %}
+        <div class="inside-form">
+            <h2 class="form-title">Sign up for your account</h2>
+            <div class="error">
+                {{form.errors.username}}
+            </div>
+            <div class="input-group">
+                <div class="name">
+                    {{form.username.label}}
+                </div>
+                {{form.username}}
+            </div>
+
+            <div>
+                    {{form.errors.email}}
+            </div>
+            <div class="input-group">
+                <div class="name">
+                    {{form.email.label}}
+                </div>
+                {{form.email}}
+            </div>
+
+            <div>
+                    {{form.errors.password1}}
+            </div>
+            <div class="input-group">
+                <div class="name">
+                    {{form.password1.label}}
+                </div>
+                {{form.password1}}
+            </div>
+
+            {{form.errors.password2}}
+
+            <div class="input-group">
+                <div class="name">
+                    Confirm
+                </div>
+                {{form.password2}}
+            </div>
+
+
+            <div class="submit">
+                <input type="submit" name="Create User" class="submit-btn">
+            </div>
+
+            <hr>
+
+            <div class="page-link">
+                <a href="{% url 'login' %}">Already have an account? Log In</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

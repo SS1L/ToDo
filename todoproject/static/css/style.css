@@ -1,0 +1,224 @@
+@import "root.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+header {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 16px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--white) !important;
+    text-decoration: none;
+}
+
+.navigation{
+    display: flex;
+}
+
+.nav-link{
+    color: var(--white) !important;
+    margin-right: 10px;
+}
+
+.login{
+    margin: auto;
+    color: var(--white) !important;
+    text-decoration: none;
+}
+
+.signup {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 6px 8px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.delete-in-future{
+    text-align: center;
+}
+
+.input-item {
+    width: 98%;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+}
+
+.todo {
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.todo-submit{
+    display: flex;
+}
+
+.submit{
+    margin-top: 30px;
+}
+
+.todo-form{
+    width: 100%;
+}
+.todo-create{
+    width: 24%;
+    background-color: #014ad3;
+    padding: 5px;
+    border-radius: 8px;
+    border: 0;
+    color: var(--white);
+    outline: none;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.all-item {
+    margin-top: 20px;
+}
+
+.create-item{
+    position: relative;
+    list-style: none;
+    padding: 12px 0;
+    border: 1px solid #a19b9b;
+}
+
+
+.task-item {
+    display: inline-block;
+    margin: 0 0 0 20px;
+    width: 50%;
+    word-wrap: break-word;
+}
+
+.menu-right {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    height: inherit;
+}
+
+.update {
+    display: flex;
+    align-items: center;
+    background-color: #03ac03;
+    color: var(--white) !important;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.delete-form{
+    margin-right: 20px;
+}
+
+.delete-item {
+    background-color: red;
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 0;
+}
+
+.update-form{
+    display: flex;
+}
+
+.update-btn {
+    margin-left: 20px;
+    background-color: #03ac03;
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 20px;
+    border: 0;
+}
+
+@media screen and (max-width: 600px){
+    .title{
+        text-align: center;
+    }
+    
+    .todo {
+        width: 100%;
+        
+    }
+
+    .todo-create{
+        width: 80%;
+        margin: 20px auto 0 auto;
+    }
+
+    .input-item{
+        width: 95%;
+    }
+
+    .create-item{
+        text-align: center;
+    }
+
+    .todo-form {
+        text-align: center;
+    }
+
+    .task-item{
+        width: 80%;
+        margin: 0 20px 20px 20px;
+    }
+
+    .menu-right{
+        position: relative;
+        justify-content: center;
+    }
+
+    .update-form {
+        flex-flow: wrap;
+    }
+    
+    .update-form .submit {
+        width: 100%;
+        text-align: center;
+    }
+
+    .update-btn {
+        width: 50%;
+        margin: 30px 0 0 0;
+    }
+
+    .inside-form .submit {
+        text-align: center;
+    }
+
+    .submit .submit-btn{
+        width: 50%;
+    }
+}

@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+
+{% block title %}Board ToDo{% endblock%}
+
+{% block content %}
+<div class="todo">
+    <h1 class="title">Add Item</h1>
+    <div class="todo-submit">
+        <form method="POST" action="" class="todo-form">
+            {% csrf_token %}
+            <input type="text" name="title" requiredid="id_title" placeholder="print here..." class="input-item">
+            <button type="submit" class="todo-create">
+                Create
+            </button>
+        </form>
+    </div>
+    <ul class='all-item'>
+        {% for task in tasks %}
+        <li class='create-item'>
+            <div class="task-item">
+                {{task}}
+            </div>
+            <div class="menu-right">
+                <div class="item">
+                    <a href="{% url 'update_task' task.id %}" class='update'>Update</a>
+                </div>
+                <div class="item">
+                    <form method='POST' action="/deleteTask/{{task.id}}/" class="delete-form">
+                        {% csrf_token %}
+                        <input type="submit" value="Delete" class="delete-item">
+                    </form>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}
